@@ -8,8 +8,7 @@
 // import './assets/css/flaticon.css'
 // import './assets/css/animate.css'
 // import './assets/css/style.css'
-import React  from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   BrowserRouter as Router,
   Route,
@@ -27,6 +26,16 @@ import {
   HISTORY,
   ROUTING_CONFIG
 } from './utils';
+// import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+// import 'photoswipe/dist/photoswipe.css'
+import '@fortawesome/fontawesome-free/css/all.css';
+// import 'swiper/css/bundle';
+import './assets/fonts/customFonts.css'
+import './assets/css/style.css'
+import './assets/css/flaticon.css'
+import './assets/css/animate.css'
 
 function App() {
   //  Preloader 
@@ -43,7 +52,7 @@ function App() {
         {isLoading ? <PreLoader /> :
           <div>
             <Helmet>
-              <title>Restly - IT Solutions & Technology React Template</title>
+              <title> Nizami Movie Center</title>
               <link rel="shortcut icon" href="favicon.ico"></link>
             </Helmet>
             <Routes>

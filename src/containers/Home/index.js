@@ -1,19 +1,15 @@
-// import './App.css'
-// import 'react-toastify/dist/ReactToastify.css';
-// import 'react-modal-video/css/modal-video.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle';
-// import 'photoswipe/dist/photoswipe.css'
-// import '@fortawesome/fontawesome-free/css/all.css';
-// import 'swiper/css/bundle';
-// import './assets/css/flaticon.css'
-// import './assets/css/animate.css'
-// import './assets/css/style.css'
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import {
-    ScrollUpBtn
+    Header,
+    ScrollUpBtn,
+    Footer
 } from "../../components"
+import Banner from './Banner';
+import MovieList from './List';
+import { CONSTANTS } from '../../utils';
+import Timeline from './Timeline';
+import Testomonial from './Testimonial';
 
 function App() {
     return (
@@ -22,9 +18,25 @@ function App() {
                 <title>Intigral</title>
                 <link rel="shortcut icon" href="favicon.ico"></link>
             </Helmet>
-            <div>
-                Sara
                 {/* <div className={rtl ? "direction-rtl" : ""}> */}
+            <div> 
+            <div>
+                <Header />
+                <Banner />
+            </div>
+            <MovieList
+                title="Currently Playing"
+                pageLink=""
+                listKey={CONSTANTS.MOVIE_LIST_TYPE.CURRENTLY_PLAYED}
+            />
+            <MovieList
+                title="Coming Soon"
+                pageLink=""
+                listKey={CONSTANTS.MOVIE_LIST_TYPE.COMING_SOON}
+            />
+            <Timeline/>
+            <Testomonial />
+            <Footer widgetSpace="pb-20" />
             </div>
             <ScrollUpBtn />
         </div>

@@ -1,5 +1,7 @@
 import Alert from "./Alert";
+import Footer from "./Footer";
 import ErrorBoundary from "./Error";
+import Header from "./Header";
 import {
     PreLoader,
     ScrollUpBtn
@@ -8,6 +10,8 @@ import {
 export {
     Alert,
     ErrorBoundary,
+    Footer,
     PreLoader,
-    ScrollUpBtn
+    ScrollUpBtn,
+    Header,
 }

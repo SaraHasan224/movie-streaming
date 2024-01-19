@@ -12,5 +12,9 @@ export const CONSTANTS = {
 		TOAST: "TOAST",
 		ALERT: "ALERT"
 	},
+	MOVIE_LIST_TYPE: {
+		CURRENTLY_PLAYED: "currently-played",
+		COMING_SOON: "coming-soon"
+	}
 }
 
