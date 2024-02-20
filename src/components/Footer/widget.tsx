@@ -1,8 +1,10 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
 
-const FooterWidget = (props) => {
+interface Iprops {
+    widgetSpace: string
+}
 
+const FooterWidget:React.FC<Iprops> = (props) => {
     const { widgetSpace } = props;
 
     return (
@@ -13,10 +15,10 @@ const FooterWidget = (props) => {
                         <div className="footer-widget about-widget">
                             <h4 className="footer-title">Profile</h4>
                             <ul className="list-style-two">
-                                <li><Link to="/faqs#">FAQs</Link></li>
-                                <li><Link to="/price-plan#">Pricing Plan</Link></li>
-                                <li><Link to="/order-tracking#">Order Tracking</Link></li>
-                                <li><Link to="/retuen#">Return</Link></li>
+                                <li><a href="/faqs#">FAQs</a></li>
+                                <li><a href="/price-plan#">Pricing Plan</a></li>
+                                <li><a href="/order-tracking#">Order Tracking</a></li>
+                                <li><a href="/retuen#">Return</a></li>
                             </ul>
                         </div>
                     </div>
@@ -24,9 +26,9 @@ const FooterWidget = (props) => {
                         <div className="footer-widget link-widget ml-20 rml-0">
                             <h4 className="footer-title">Recent Post</h4>
                             <ul className="list-style-two">
-                                <li><Link to="#">Touch of uniqueness</Link></li>
-                                <li><Link to="/services#">Offices you won't forget</Link></li>
-                                <li><Link to="#">Cicilian</Link></li>
+                                <li><a href="#">Touch of uniqueness</a></li>
+                                <li><a href="/services#">Offices you won't forget</a></li>
+                                <li><a href="#">Cicilian</a></li>
                             </ul>
                         </div>
                     </div>
@@ -34,10 +36,10 @@ const FooterWidget = (props) => {
                         <div className="footer-widget link-widget ml-20 rml-0">
                             <h4 className="footer-title">Customer</h4>
                             <ul className="list-style-two">
-                                <li><Link to="#">Help & contact Us</Link></li>
-                                <li><Link to="/services#">Return</Link></li>
-                                <li><Link to="#">Online stores</Link></li>
-                                <li><Link to="#">Terms & conditions</Link></li>
+                                <li><a href="#">Help & contact Us</a></li>
+                                <li><a href="/services#">Return</a></li>
+                                <li><a href="#">Online stores</a></li>
+                                <li><a href="#">Terms & conditions</a></li>
                             </ul>
                         </div>
                     </div>
@@ -45,10 +47,10 @@ const FooterWidget = (props) => {
                         <div className="footer-widget newsletter-widget">
                             <h4 className="footer-title">Contact</h4>
                             <ul className='list-style-two social-share'>
-                                <li><Link to="http://facebook.com" target='_blank' ><i className="fab fa-facebook-f"></i></Link></li>
-                                <li><Link to="http://twitter.com" target='_blank' ><i className="fab fa-twitter"></i></Link></li>
-                                <li> <Link to="https://www.instagram.com/" target='_blank' ><i className="fab fa-instagram"></i></Link></li>
-                                <li><Link to="https://www.pinterest.com/" target='_blank' ><i className="fab fa-pinterest-p"></i></Link></li>
+                                <li><a href="http://facebook.com" target='_blank' ><i className="fab fa-facebook-f"></i></a></li>
+                                <li><a href="http://twitter.com" target='_blank' ><i className="fab fa-twitter"></i></a></li>
+                                <li> <a href="https://www.instagram.com/" target='_blank' ><i className="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.pinterest.com/" target='_blank' ><i className="fab fa-pinterest-p"></i></a></li>
                             </ul>
                         </div>
                     </div>

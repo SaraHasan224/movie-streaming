@@ -3,9 +3,24 @@ import { CurrentlyPlaying, ComingSoon } from '../../../utils/json/movieData'
 import MoviePlaceholder from './box';
 import { CONSTANTS } from '../../../utils';
 
-const MovieList = (props) => {
+type LState = any
+type Iprops = {
+    listKey: string;
+    title: string
+}
+type MovieProps = {
+    "id": number;
+    "thumb": string;
+    "name": string,
+    "date": string,
+    "viewing": string,
+    "lang": any,
+    "delay": number
+}
+
+const MovieList:React.FC<Iprops>  = (props) => {
     const { listKey, title } = props
-    const [list, setList] = useState([])
+    const [list, setList] = useState<LState>([])
   
     useEffect(() => {
         if(listKey === CONSTANTS.MOVIE_LIST_TYPE.CURRENTLY_PLAYED) {
@@ -26,7 +41,7 @@ const MovieList = (props) => {
                         <span className="sub-title text-light-black see-more">See more</span>
                     </div>
                     <div className="row">
-                        {list.map(movie =>
+                        {list.map((movie:MovieProps) =>
                             <div className="col-lg-3 col-sm-6" key={movie.id}>
                                 <MoviePlaceholder movie={movie} />
                             </div>

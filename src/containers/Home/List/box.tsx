@@ -1,9 +1,21 @@
 import React from 'react';
 import { Fade } from 'react-reveal';
-import { HashLink as Link } from 'react-router-hash-link';
 
-const MoviePlaceholder = ({ movie }) => {
-    const { thumb, name, viewing, date, delay, lang } = movie;
+
+type MovieProps = {
+   movie: {
+    "id": number;
+    "thumb": string;
+    "name": string,
+    "date": string,
+    "viewing": string,
+    "lang": any,
+    "delay": number
+   }
+}
+
+const MoviePlaceholder:React.FC<MovieProps>  = (props) => {
+    const { thumb, name, viewing, date, delay, lang } = props?.movie;
 
     return (
         <>
@@ -13,11 +25,11 @@ const MoviePlaceholder = ({ movie }) => {
                         <img src={`${thumb}`} alt={`Movie ${name}`} />
                     </div>
                     <div className="movie-detail text-white text-left">
-                        <h5><Link to="/movie-profile#">{name}</Link></h5>
+                        <h5><a href="/movie-profile#">{name}</a></h5>
                         <span>{date}</span>
                         <p>{viewing} </p>
                         {lang.map(lan =>
-                            <Link to="/#" className="lang-btn mr-5">{lan}</Link>
+                            <a href="/#" className="lang-btn mr-5">{lan}</a>
                         )}
                     </div>
                 </div>

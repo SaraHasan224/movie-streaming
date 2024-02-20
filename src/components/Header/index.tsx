@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from '../../assets/images/logo/test-logo.png'
-import { HashLink as Link } from 'react-router-hash-link';
 
-const Header = () => {
+interface Iprops {
+    
+}
+
+const Header:React.FC<Iprops> = (props) => {
     return (
         <>
             <header>
@@ -11,7 +14,7 @@ const Header = () => {
                         className="logo-outer py-30 px-100 d-none d-lg-flex align-items-center"
                     >
                         <div className="logo">
-                            <Link to="/#"><img src={logo} alt="Logo" title="Logo" /></Link>
+                            <a href="/#"><img src={logo} alt="Logo" title="Logo" /></a>
                         </div>
                     </div>
                     <div className="header-wrap align-self-center">
@@ -20,9 +23,7 @@ const Header = () => {
                                 <div className="header-inner d-flex align-items-center">
                                     <div className="nav-outer clearfix d-flex align-items-center">
                                         <nav className="main-menu navbar-expand-lg"></nav>
-                                        <div className="menu-btn">
-                                            <Link to="/contact#" className="theme-btn">Profile</Link>
-                                        </div>
+                                        <div className="menu-btn"><i className="fa fa-user" aria-hidden="true"></i></div>
                                     </div>
                                 </div>
                             </div>

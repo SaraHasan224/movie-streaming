@@ -6,11 +6,20 @@ import { HELPER } from "../../utils";
 import { ALERT_ACTIONS } from "../../store/actions";
 
 let timeoutTime
+interface Iprops {
 
-function AlertComponent() {
+}
+interface IRootState {
+  toast: {
+    message: string,
+    type: string
+  }
+}
+
+const AlertComponent:React.FC<Iprops> = (props) => {
   let dispatch = useDispatch();
 
-  const { message, type } = useSelector(state => state.toast);
+  const { message, type } = useSelector((state: IRootState) => state.toast);
 
   const clearAlert = () => {
       dispatch(ALERT_ACTIONS.clear())

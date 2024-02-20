@@ -11,14 +11,17 @@ import { CONSTANTS } from '../../utils';
 import Timeline from './Timeline';
 import Testomonial from './Testimonial';
 
-function App() {
+interface Iprops {
+
+}
+
+const App:React.FC<Iprops> = () => {
     return (
         <div>
             <Helmet>
                 <title>Intigral</title>
                 <link rel="shortcut icon" href="favicon.ico"></link>
             </Helmet>
-                {/* <div className={rtl ? "direction-rtl" : ""}> */}
             <div> 
             <div>
                 <Header />
@@ -26,12 +29,10 @@ function App() {
             </div>
             <MovieList
                 title="Currently Playing"
-                pageLink=""
                 listKey={CONSTANTS.MOVIE_LIST_TYPE.CURRENTLY_PLAYED}
             />
             <MovieList
                 title="Coming Soon"
-                pageLink=""
                 listKey={CONSTANTS.MOVIE_LIST_TYPE.COMING_SOON}
             />
             <Timeline/>

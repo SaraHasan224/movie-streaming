@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Fade } from 'react-reveal';
 import Slider from "react-slick";
-import { HashLink as Link } from 'react-router-hash-link';
 
 import { HomePageBanner } from '../../../utils/json/movieData'
 
@@ -25,11 +24,18 @@ const settings = {
     pauseOnHover: true
 };
 
-const Banner = () => {
+interface IState {}
+interface Iprops {}
+type IFState = any;
+interface IFMBState {
+    
+}
 
-    const [isFocused, setIsFocused] = useState(false);
-    const [focusedMovie, setIsFocusedMovie] = useState([]);
-    const [focusedMovieBanner, setIsFocusedMovieBanner] = useState(HomePageBanner[0]?.expandedView);
+const Banner:React.FC<Iprops> = () => {
+
+    const [isFocused, setIsFocused] = useState<IState>(false);
+    const [focusedMovie, setIsFocusedMovie] = useState<IFState>([]);
+    const [focusedMovieBanner, setIsFocusedMovieBanner] = useState<IFMBState>(HomePageBanner[0]?.expandedView);
 
 
     const focusSliderObject = (state, object) => {
@@ -41,7 +47,8 @@ const Banner = () => {
     return (
         <>
             <section className="hero-section">
-                <img src={focusedMovieBanner ?? Banner1} className='parentBanner' alt={'parent-banner'}/>
+                <img src={Banner1} className='parentBanner' alt={'parent-banner'}/>
+                {/* <img src={focusedMovieBanner ?? Banner1} className='parentBanner' alt={'parent-banner'}/> */}
                 <div className="container">
                     <div className="row bannerSlider">
                         <div className="col-lg-8">
@@ -66,11 +73,11 @@ const Banner = () => {
                                                 <div className="icon">
                                                     <img src={banner?.titleImg} alt={banner?.name}/>
                                                     <h6 className={ focusedMovie?.reference === banner?.reference && isFocused ? "" : "d-none"}>
-                                                        <Link to="/service-details#">{banner?.name}</Link>
+                                                        <a href="/service-details#">{banner?.name}</a>
                                                     </h6>
                                                     <Fade className={`fadeInUp delay-0-6s ${focusedMovie?.reference === banner?.reference && isFocused ? "" : "d-none"}`}>
                                                         <div className={`hero-btn hero-slider-btn ml-25 rml-25 mt-10 ${focusedMovie?.reference === banner?.reference && isFocused ? "" : "d-none"}`}>
-                                                            <Link to="/contact#" className='theme-btn'>Book Now</Link>
+                                                            <a href="/contact#" className='theme-btn'>Book Now</a>
                                                         </div>
                                                     </Fade>
                                                 </div>

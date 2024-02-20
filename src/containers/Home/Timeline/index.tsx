@@ -1,34 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import aboutThumb5 from '../../../assets/images/timeline/about-five.jpg'
 import aboutCircle from '../../../assets/images/timeline/about-circle-dots.png'
+import {
+  TimelineData
+} from "../../../utils/json/timelineData";
+import { HELPER } from '../../../utils';
 
-const Timeline = () => {
+interface Iprops { }
+type fIState = number
+type fICState = {
+   heading?: string;
+   subheading?: string;
+   content?: string;
+   mainImg?: string;
+   thumbImg?: string;
+}
+
+const Timeline: React.FC<Iprops> = () => {
+  const [focusedIndex, setFocusedIndex] = useState<fIState>(0);
+  const [focusedIndexContent, setFocusedIndexContent] = useState<fICState>({});
+
+
+  useEffect(() => {
+    const myData = TimelineData.filter((_t) => _t.id === focusedIndex);
+    console.log("myData: ", myData)
+    // if(HELPER.isNotEmpty(myData?.data)) {
+    //   setFocusedIndexContent(myData?.data)
+    // }
+  }, [])
+
   return (
     <>
-      <div class="timeline">
-        <div class="events">
+      <div className="timeline">
+        <div className="events">
           <ol>
             <ul>
-              <li>
-                <a href="#0" class="selected">Early Life</a>
-              </li>
-              <li>
-                <a href="#1">Career</a>
-              </li>
-              <li>
-                <a href="#2">Philosophy</a>
-              </li>
-              <li>
-                <a href="#3">Legacy</a>
-              </li>
+              {
+                TimelineData.map((timeline, key) => {
+                  return (
+                    <li>
+                      <a
+                        href={`#${timeline?.id}`}
+                        onClick={() => {
+                          console.log("timeline: ", timeline)
+                          setFocusedIndex(timeline?.id)
+                          // setFocusedIndexContent(timeline?.data)
+                        }}
+                        className={`${focusedIndex === timeline?.id ? 'selected' : ''}`}
+                      >{timeline?.title}
+                      </a>
+                    </li>
+                  )
+                })
+              }
             </ul>
           </ol>
         </div>
       </div>
 
-      <div class="events-content">
+      <div className="events-content">
         <ol>
-          <li id="0" class="selected">
+          <li
+            id={`${focusedIndex}`}
+            className={'selected'}
+          >
             <section className="about-section style-five py-30 rpy-100">
               <div className="container">
                 <div className="row align-items-center justify-content-center">
@@ -45,7 +80,7 @@ const Timeline = () => {
                           <h6>OPERETTA</h6>
                           <h5>Arshin Mal Alan</h5>
                           <p>
-                          Arshin Mal Alan is a 4-act operetta composed by Azerbaijani composer Uzeyir Hajibeyov. The libretto of the work was also written by Uzeyir Hajibeyov in 1913 in St. Petersburg. The premiere of the opera was held on October 25, 1913 at the Haji Zeynelabidin Tagiyev Theater in Baku.
+                            Arshin Mal Alan is a 4-act operetta composed by Azerbaijani composer Uzeyir Hajibeyov. The libretto of the work was also written by Uzeyir Hajibeyov in 1913 in St. Petersburg. The premiere of the opera was held on October 25, 1913 at the Haji Zeynelabidin Tagiyev Theater in Baku.
                           </p>
                         </div>
                       </div>
@@ -75,18 +110,6 @@ const Timeline = () => {
                 </div>
               </div>
             </section>
-          </li>
-          <li id="1">
-            <h2>Career</h2>
-            <p>new york times</p>
-          </li>
-          <li id="2">
-            <h2>Philosophy</h2>
-            <p>here</p>
-          </li>
-          <li id="3">
-            <h2>Legacy</h2>
-            <p>after</p>
           </li>
         </ol>
       </div>
