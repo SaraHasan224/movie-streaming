@@ -1,5 +1,4 @@
 import React from 'react';
-import { Fade } from 'react-reveal';
 
 
 type MovieProps = {
@@ -19,7 +18,6 @@ const MoviePlaceholder:React.FC<MovieProps>  = (props) => {
 
     return (
         <>
-            <Fade className="fadeInUp" delay={delay}>
                 <div className="movie-container style-two">
                     <div className="image">
                         <img src={`${thumb}`} alt={`Movie ${name}`} />
@@ -33,7 +31,6 @@ const MoviePlaceholder:React.FC<MovieProps>  = (props) => {
                         )}
                     </div>
                 </div>
-            </Fade>
         </>
     );
 };

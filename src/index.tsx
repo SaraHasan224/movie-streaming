@@ -7,20 +7,13 @@ import { Provider } from "react-redux";
 
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider as P, ErrorBoundary } from "@rollbar/react";
-import { store, persistor } from "./store";
-// same configuration you would create for the Rollbar.js SDK
-const rollbarConfig = {
-  accessToken: process.env.REACT_APP_ROLLBAR_TOKEN,
-  captureUncaught: true,
-  captureUnhandledRejections: true,
-  payload: {
-    environment: process.env.REACT_APP_ENVIRONMENT,
-  },
-};
+import { store, persistor } from "./store/index";
+import {ROLLBAR_CONFIG} from "./utils/index";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root')  as HTMLElement);
 root.render(
-  <P config={rollbarConfig}>
+  <P config={ROLLBAR_CONFIG}>
     <Provider store={store}>
       <ErrorBoundary>
         <PersistGate persistor={persistor}>

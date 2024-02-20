@@ -6,23 +6,23 @@ import {
 } from './constants'
 import {
 	LOCAL_STORAGE_SERVICE,
-	COOKIE_STORAGE_SERVICE,
 } from './storage'
 import {
 	API_REQUEST,
 	HELPER,
 	HISTORY
 } from './helpers'
+import ROLLBAR_CONFIG from "./config/rollbar"
 
 
 export {
 	LOCAL_STORAGE_SERVICE,
-	COOKIE_STORAGE_SERVICE,
 	API_REQUEST,
 	API_ENDPOINTS,
 	HELPER,
 	CONSTANTS,
 	ROUTER_PATH,
 	ROUTING_CONFIG,
-	HISTORY
+	HISTORY,
+	ROLLBAR_CONFIG
 }

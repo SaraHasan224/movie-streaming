@@ -1,7 +1,4 @@
 import axios from 'axios'
-import {
-	COOKIE_STORAGE_SERVICE
-} from '../../utils'
 
 var mainInstance = axios.create({
 	headers: {
@@ -13,14 +10,6 @@ var mainInstance = axios.create({
 const makeRequest =
 	(instance) =>
 		(method, url, token, ...params) => {
-			let access_token = '';
-				// Perform localStorage action
-				access_token = COOKIE_STORAGE_SERVICE._getAccessToken()
-			if (access_token) {
-				axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`
-				mainInstance.defaults.headers.common['Authorization'] = `Bearer ${access_token}`
-			}
-
 			if (!token) {
 				delete axios.defaults.headers.common['Authorization']
 				delete mainInstance.defaults.headers.common['Authorization']

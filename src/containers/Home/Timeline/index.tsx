@@ -4,10 +4,9 @@ import aboutCircle from '../../../assets/images/timeline/about-circle-dots.png'
 import {
   TimelineData
 } from "../../../utils/json/timelineData";
-import { HELPER } from '../../../utils';
+import { HELPER } from '../../../utils/index';
 
-interface Iprops { }
-type fIState = number
+type tProps = {}
 type fICState = {
    heading?: string;
    subheading?: string;
@@ -16,8 +15,8 @@ type fICState = {
    thumbImg?: string;
 }
 
-const Timeline: React.FC<Iprops> = () => {
-  const [focusedIndex, setFocusedIndex] = useState<fIState>(0);
+const Timeline: React.FC<tProps> = () => {
+  const [focusedIndex, setFocusedIndex] = useState<boolean>(0);
   const [focusedIndexContent, setFocusedIndexContent] = useState<fICState>({});
 
 

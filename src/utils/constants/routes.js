@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Home } from '../../containers';
+import { Home } from '../../containers/index';
 export const ROUTER_PATH = {
 	BASE: "/",
 	HOME: "/home",

@@ -4,18 +4,16 @@ import {
     Header,
     ScrollUpBtn,
     Footer
-} from "../../components"
+} from "../../components/index"
 import Banner from './Banner';
 import MovieList from './List';
-import { CONSTANTS } from '../../utils';
+import { CONSTANTS } from '../../utils/index';
 import Timeline from './Timeline';
 import Testomonial from './Testimonial';
 
-interface Iprops {
+type tProps = {}
 
-}
-
-const App:React.FC<Iprops> = () => {
+const App:React.FC<tProps> = () => {
     return (
         <div>
             <Helmet>

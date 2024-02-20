@@ -2,8 +2,8 @@ import React from 'react';
 import Team1 from "../../../assets/images/testimonial/image.jpg";
 import { HomePageNews } from "../../../utils/json/movieData";
 
-interface Iprops {}
-const Testomonial:React.FC<Iprops>  = (props) => {
+type tProps = {}
+const Testomonial:React.FC<tProps>  = (props) => {
     return (
         <div>
             <section className="testimonial-six pt-120 rpt-100 pb-90 rpb-70">

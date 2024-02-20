@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { CurrentlyPlaying, ComingSoon } from '../../../utils/json/movieData'
 import MoviePlaceholder from './box';
-import { CONSTANTS } from '../../../utils';
+import { CONSTANTS } from '../../../utils/index';
 
 type LState = any
-type Iprops = {
+type tProps = {
     listKey: string;
     title: string
 }
@@ -18,7 +18,7 @@ type MovieProps = {
     "delay": number
 }
 
-const MovieList:React.FC<Iprops>  = (props) => {
+const MovieList:React.FC<tProps>  = (props) => {
     const { listKey, title } = props
     const [list, setList] = useState<LState>([])
   

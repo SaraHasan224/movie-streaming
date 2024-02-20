@@ -1,5 +1,5 @@
-import { ALERT_CONSTANTS } from "../../store/actiontypes";
-import { CONSTANTS } from "../../utils";
+import { ALERT_CONSTANTS } from "../actiontypes";
+import { CONSTANTS } from "../../utils/index";
 
 const initState = {
   type: "",

@@ -1,14 +1,13 @@
 import React from 'react';
 
-interface Iprops {
+type tProps = {
     widgetSpace: string
 }
 
-const FooterWidget:React.FC<Iprops> = (props) => {
+const FooterWidget:React.FC<tProps> = (props) => {
     const { widgetSpace } = props;
 
     return (
-        <>
             <div className={`${widgetSpace} footer-widget-area pt-85`}>
                 <div className="row">
                     <div className="col-lg-3 col-sm-6">
@@ -56,7 +55,6 @@ const FooterWidget:React.FC<Iprops> = (props) => {
                     </div>
                 </div>
             </div>
-        </>
     );
 };
 

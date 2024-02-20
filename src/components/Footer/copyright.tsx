@@ -1,12 +1,9 @@
 import React from 'react';
 
-interface Iprops {
-    
-}
+type tProps = {}
 
-const FooterCopyRight:React.FC<Iprops> = (props) => {
+const FooterCopyRight:React.FC<tProps> = (props) => {
     return (
-        <>
             <div className={`copyright-area`}>
                 <div className="container">
                     <div className="copyright-inner pt-15">
@@ -14,7 +11,6 @@ const FooterCopyRight:React.FC<Iprops> = (props) => {
                     </div>
                 </div>
             </div>
-        </>
     );
 };
 

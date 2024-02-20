@@ -1,22 +1,19 @@
-import React  from 'react';
-import { useEffect } from "react";
+import React,{ useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { HELPER } from "../../utils";
-import { ALERT_ACTIONS } from "../../store/actions";
+import { HELPER } from "../../utils/index";
+import { ALERT_ACTIONS } from "../../store/actions/index";
 
 let timeoutTime
-interface Iprops {
-
-}
-interface IRootState {
+type tProps = {}
+type IRootState = {
   toast: {
     message: string,
     type: string
   }
 }
 
-const AlertComponent:React.FC<Iprops> = (props) => {
+const AlertComponent:React.FC<tProps> = (props) => {
   let dispatch = useDispatch();
 
   const { message, type } = useSelector((state: IRootState) => state.toast);
@@ -26,7 +23,6 @@ const AlertComponent:React.FC<Iprops> = (props) => {
   };
 
   useEffect(() => {
-    // returned function will be called on component unmount
     return () => {
       if (!HELPER.isEmpty(message)) {
         dispatch(ALERT_ACTIONS.clear())
@@ -48,7 +44,7 @@ return <div className="row">
   <div className={`col-12 alert_classes `}>
       <div className={`alertCustom ${type}`} role="alert">
         <div className={`alertAction  ${type}`}>
-            < span className={`icomoon-check`}
+            <span className={`icomoon-check`}
               onClick={clearAlert}></span>
         </div>
         <div className="alertMsg">{message}</div>

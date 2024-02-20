@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 
-interface IState {
-    
-}
-interface IProps {
+type tProps = {
     children: any
 }
 
-class ErrorBoundary extends Component<IProps, IState> {
-    constructor(props: IProps) {
+class ErrorBoundary extends Component<tProps, {}> {
+    constructor(props: tProps) {
         super(props);
         this.state = { hasError: false };
     }

@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-interface IState {
-}
-
 const ScrollUpBtn = () => {
 
-    const [scrollUpButton, setScrollUpButton] = useState<IState>(false)
+    const [scrollUpButton, setScrollUpButton] = useState<boolean>(false)
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
