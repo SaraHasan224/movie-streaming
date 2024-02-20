@@ -84,10 +84,12 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  }
+	"lint-staged": {
+		"src/**/*.{js, jsx, ts, tsx}": [
+			"eslint --quiet --fix"
+		],
+		"src/**/*.{json,js,ts,tsx,jsx,html,css,scss}": [
+			"prettier --write --ignore-unknown"
+		]
+	}
 }
