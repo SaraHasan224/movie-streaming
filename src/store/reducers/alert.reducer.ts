@@ -1,16 +1,34 @@
 import { ALERT_CONSTANTS } from "../actiontypes";
 import { CONSTANTS } from "../../utils/index";
 
-const initState = {
+type actionProps = {
+  type?: string;
+  message?: string;
+  hide?: boolean;
+  clearAll?: boolean;
+  group?: string;
+  autoDismiss?: string;
+};
+
+interface alertReducerTypes {
+  type: string;
+  message: string;
+  hide: boolean;
+  group: string;
+  autoDismiss: boolean;
+  clearAll: boolean;
+}
+
+const initState: alertReducerTypes = {
   type: "",
-  message: null,
+  message: "",
   hide: true,
   group: CONSTANTS.ERROR_TYPE.TOAST,
   autoDismiss: false,
-  clearAll: false
+  clearAll: false,
 };
 
-const alertReducer = (state = initState, action) => {
+const alertReducer = (state = initState, action: actionProps) => {
   switch (action.type) {
     case ALERT_CONSTANTS.SUCCESS:
       return {
@@ -38,16 +56,6 @@ const alertReducer = (state = initState, action) => {
         type: "warning",
         message: action.message,
         hide: true,
-        group: action.group,
-        autoDismiss: action.autoDismiss,
-        clearAll: false,
-      };
-    case ALERT_CONSTANTS.INFO:
-      return {
-        ...state,
-        type: "info",
-        message: action.message,
-        hide: false,
         group: action.group,
         autoDismiss: action.autoDismiss,
         clearAll: false,

@@ -5,9 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 
-import { PersistGate } from "redux-persist/integration/react";
 import { Provider as P, ErrorBoundary } from "@rollbar/react";
-import { store, persistor } from "./store/index";
+import { store } from "./store/index";
 import { ROLLBAR_CONFIG } from "./utils/index";
 
 const root = ReactDOM.createRoot(
@@ -17,9 +16,7 @@ root.render(
   <P config={ROLLBAR_CONFIG}>
     <Provider store={store}>
       <ErrorBoundary>
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
+        <App />
       </ErrorBoundary>
     </Provider>
   </P>

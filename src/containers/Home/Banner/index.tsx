@@ -22,7 +22,6 @@ const settings = {
 };
 
 type tProps = {};
-type IFState = any;
 type fMovieProps = {
   name?: string;
   titleImg?: string;
@@ -33,15 +32,13 @@ type fMovieProps = {
 
 const Banner: React.FC<tProps> = () => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
-  const [focusedMovie, setIsFocusedMovie] = useState<fMovieProps>([]);
-  const [focusedMovieBanner, setIsFocusedMovieBanner] = useState<Object>(
-    HomePageBanner[0]?.expandedView
-  );
+  const [focusedMovie, setIsFocusedMovie] = useState<fMovieProps>({});
+  // const [focusedMovieBanner, setIsFocusedMovieBanner] = useState<Object>(HomePageBanner[0]?.expandedView);
 
-  const focusSliderObject = (state, object) => {
+  const focusSliderObject = (state: boolean, object: fMovieProps) => {
     setIsFocused(state);
     setIsFocusedMovie(object);
-    setIsFocusedMovieBanner(object?.expandedView);
+    // setIsFocusedMovieBanner(object?.expandedView);
   };
 
   return (
@@ -64,7 +61,7 @@ const Banner: React.FC<tProps> = () => {
           <div className="row">
             <div>
               <Slider {...settings}>
-                {HomePageBanner.map((banner, index) => {
+                {HomePageBanner.map((banner, key) => {
                   return (
                     <div
                       className={
@@ -73,6 +70,7 @@ const Banner: React.FC<tProps> = () => {
                           ? "highlightedHomeBanner"
                           : "homeBanner"
                       }
+                      key={`banner-${key}`}
                       onMouseEnter={() => focusSliderObject(true, banner)}
                       onMouseLeave={() => focusSliderObject(false, banner)}
                     >

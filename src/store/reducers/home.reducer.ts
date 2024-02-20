@@ -1,23 +1,31 @@
-import { HOME_CONSTANTS } from '../actiontypes'
+import { HOME_CONSTANTS } from "../actiontypes";
 
-
-const initialState = {
-  recommended: [],
+type actionProps = {
+  type?: string;
+  response?: {
+    recommended?: object;
+  };
+};
+interface homeReducerTypes {
+  recommended: object;
 }
+const initialState: homeReducerTypes = {
+  recommended: {},
+};
 
-const homeReducer = (state = initialState, action) => {
-	switch (action.type) {
+const homeReducer = (state = initialState, action: actionProps) => {
+  switch (action.type) {
     case HOME_CONSTANTS.HOMEPAGE.REQUEST:
-      return state
+      return state;
     case HOME_CONSTANTS.HOMEPAGE.SUCCESS:
       return {
         ...state,
         recommended: action?.response?.recommended,
-      }
+      };
     case HOME_CONSTANTS.HOMEPAGE.FAILURE:
-      return state
-		default:
-			return state
-	}
-}
-export default homeReducer
+      return state;
+    default:
+      return state;
+  }
+};
+export default homeReducer;

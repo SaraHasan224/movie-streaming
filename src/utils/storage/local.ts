@@ -1,30 +1,29 @@
-function _saveToLocalStorage(key, value) {
-	localStorage.setItem(key, value);
+function _saveToLocalStorage(key: string, value: string) {
+  localStorage.setItem(key, value);
 }
 
-function _getFromLocalStorage(key) {
-  if (typeof window !== 'undefined') {
-	return localStorage.getItem(key);
+function _getFromLocalStorage(key: string) {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem(key);
   }
   return null;
 }
 
-function _updateInLocalStorage(key, value) {
-	localStorage.setItem(key, value)
+function _updateInLocalStorage(key: string, value: string) {
+  localStorage.setItem(key, value);
 }
 
-function _deleteFromLocalStorage(key) {
-	localStorage.removeItem(key)
+function _deleteFromLocalStorage(key: string) {
+  localStorage.removeItem(key);
 }
 function _clearLocalStorage() {
-	localStorage.clear()
+  localStorage.clear();
 }
-
 
 export const LOCAL_STORAGE_SERVICE = {
-	_saveToLocalStorage,
-	_getFromLocalStorage,
-	_updateInLocalStorage,
-	_deleteFromLocalStorage,
-	_clearLocalStorage,
-}
+  _saveToLocalStorage,
+  _getFromLocalStorage,
+  _updateInLocalStorage,
+  _deleteFromLocalStorage,
+  _clearLocalStorage,
+};

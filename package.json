@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.82",
-    "@types/react": "^18.2.57",
+    "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "axios": "^1.6.7",
@@ -75,6 +75,9 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.11",
+    "@types/react-slick": "^0.23.13",
+    "@types/redux-logger": "^3.0.13",
+    "@types/redux-promise": "^0.5.32",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",

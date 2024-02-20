@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from "redux";
+import { legacy_createStore as createStore, applyMiddleware } from "redux";
 import { persistStore } from "redux-persist";
 import { thunk } from "redux-thunk";
 import { createLogger } from "redux-logger";
@@ -21,3 +21,11 @@ const store = createStore(rootReducer, middleware);
 persistor = persistStore(store);
 
 export { store, persistor };
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>;
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch;
+
+// and if you need the type of the store itself
+export type AppStore = typeof store;
