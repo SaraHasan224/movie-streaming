@@ -80,9 +80,9 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
-    "prettier": "^3.2.5",
     "lint-staged": "*",
-    "npm-run-all": "*"
+    "npm-run-all": "*",
+    "prettier": "^3.2.5"
   },
   "husky": {
     "hooks": {
