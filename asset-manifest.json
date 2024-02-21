@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/movie-streaming/static/css/main.4b8cdfdd.chunk.css",
-    "main.js": "/movie-streaming/static/js/main.dde66d71.chunk.js",
-    "main.js.map": "/movie-streaming/static/js/main.dde66d71.chunk.js.map",
+    "main.js": "/movie-streaming/static/js/main.2b067cfc.chunk.js",
+    "main.js.map": "/movie-streaming/static/js/main.2b067cfc.chunk.js.map",
     "runtime-main.js": "/movie-streaming/static/js/runtime-main.93c8719e.js",
     "runtime-main.js.map": "/movie-streaming/static/js/runtime-main.93c8719e.js.map",
     "static/css/2.2e47ed90.chunk.css": "/movie-streaming/static/css/2.2e47ed90.chunk.css",
@@ -11,7 +11,7 @@
     "static/js/3.bb31c7d3.chunk.js": "/movie-streaming/static/js/3.bb31c7d3.chunk.js",
     "static/js/3.bb31c7d3.chunk.js.map": "/movie-streaming/static/js/3.bb31c7d3.chunk.js.map",
     "index.html": "/movie-streaming/index.html",
-    "precache-manifest.235c985d3e5c92a9512cf3b627b2d243.js": "/movie-streaming/precache-manifest.235c985d3e5c92a9512cf3b627b2d243.js",
+    "precache-manifest.4dc20856a698af734179f51bdb1eab05.js": "/movie-streaming/precache-manifest.4dc20856a698af734179f51bdb1eab05.js",
     "service-worker.js": "/movie-streaming/service-worker.js",
     "static/css/2.2e47ed90.chunk.css.map": "/movie-streaming/static/css/2.2e47ed90.chunk.css.map",
     "static/css/main.4b8cdfdd.chunk.css.map": "/movie-streaming/static/css/main.4b8cdfdd.chunk.css.map",
@@ -50,6 +50,6 @@
     "static/css/2.2e47ed90.chunk.css",
     "static/js/2.d832438a.chunk.js",
     "static/css/main.4b8cdfdd.chunk.css",
-    "static/js/main.dde66d71.chunk.js"
+    "static/js/main.2b067cfc.chunk.js"
   ]
 }
