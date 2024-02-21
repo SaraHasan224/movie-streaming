@@ -10,7 +10,7 @@ type actionProps = {
   autoDismiss?: string;
 };
 
-interface alertReducerTypes {
+export interface alertStates {
   type: string;
   message: string;
   hide: boolean;
@@ -19,7 +19,7 @@ interface alertReducerTypes {
   clearAll: boolean;
 }
 
-const initState: alertReducerTypes = {
+const initState: alertStates = {
   type: "",
   message: "",
   hide: true,

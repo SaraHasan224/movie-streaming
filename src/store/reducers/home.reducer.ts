@@ -6,10 +6,10 @@ type actionProps = {
     recommended?: object;
   };
 };
-interface homeReducerTypes {
+export interface homeState {
   recommended: object;
 }
-const initialState: homeReducerTypes = {
+const initialState: homeState = {
   recommended: {},
 };
 

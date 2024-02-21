@@ -1,17 +1,25 @@
-import { combineReducers } from "redux";
+// @ts-nocheck
+
+import { combineReducers, Reducer } from "redux";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { homeReducer, homeState } from "./home.reducer";
+import { alertReducer, alertStates } from "./alert.reducer";
 
-import { homeReducer } from "./home.reducer";
-import { alertReducer } from "./alert.reducer";
+// Define type for the root state
+export interface RootState {
+  alert: alertStates;
+  home: homeState;
+}
 
 const homeConfig = {
   key: "home",
   storage,
-  whitelist: [],
+  whitelist: [] as string[],
 };
 
-export const rootReducer = combineReducers({
+// Define type for the rootReducer
+export const rootReducer: Reducer<RootState> = combineReducers<RootState>({
   alert: alertReducer,
   home: persistReducer(homeConfig, homeReducer),
 });

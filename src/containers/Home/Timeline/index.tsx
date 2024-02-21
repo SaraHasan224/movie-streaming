@@ -23,8 +23,9 @@ type TimelineState = {
 export const Timeline: React.FC<TimelineProps> = () => {
   const [timelineData, setTimelineData] = useState<TimelineState>({});
   const [focusedIndex, setFocusedIndex] = useState<number>(0);
-  const [focusedIndexContent, setFocusedIndexContent] =
-    useState<ContentType | null>(null);
+  const [focusedIndexContent, setFocusedIndexContent] = useState<ContentType>(
+    {}
+  );
 
   useEffect(() => {
     const myData = TimelineData.filter((_t) => _t.id === focusedIndex);
@@ -69,8 +70,8 @@ export const Timeline: React.FC<TimelineProps> = () => {
           <li id={`${focusedIndex}`} className={"selected"}>
             <section className="about-section style-five py-30 rpy-100">
               <div className="container">
-                {HELPER.isNotEmpty(focusedIndexContent)
-                  ? focusedIndexContent.map((content: any, key1: any) => {
+                {focusedIndexContent instanceof Array
+                  ? focusedIndexContent!.map((content: any, key1: any) => {
                       return (
                         <div className="row align-items-center justify-content-center">
                           {(key1 + 1) % 2 === 1 ? (
