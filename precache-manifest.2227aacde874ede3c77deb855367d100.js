@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "22fa3aef6b9c6e2cf1b8db8c3e761b00",
+    "revision": "723720a93ab71077b2d0e98df676e08b",
     "url": "/movie-streaming/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie-streaming/static/css/2.2e47ed90.chunk.css"
   },
   {
-    "revision": "d1c63986bb58afa76e87",
+    "revision": "9abdc8aafc2e20fddf1f",
     "url": "/movie-streaming/static/css/main.4b8cdfdd.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie-streaming/static/js/3.bb31c7d3.chunk.js"
   },
   {
-    "revision": "d1c63986bb58afa76e87",
-    "url": "/movie-streaming/static/js/main.27ede801.chunk.js"
+    "revision": "9abdc8aafc2e20fddf1f",
+    "url": "/movie-streaming/static/js/main.88c2d2e9.chunk.js"
   },
   {
     "revision": "c762dfda667d3eef1dd3",
