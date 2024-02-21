@@ -48,8 +48,6 @@
   "scripts": {
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "set NODE_OPTIONS=--openssl-legacy-provider && npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
@@ -58,8 +56,10 @@
     "precommit": "run-s process-staged-files",
     "check-types": "tsc --noEmit",
     "process-staged-files": "lint-staged",
-    "prepare": "husky"
-  },
+    "prepare": "husky",
+    "predeploy": "set NODE_OPTIONS=--openssl-legacy-provider && npm run build",
+    "deploy": "gh-pages -d build"
+    },
   "eslintConfig": {
     "extends": [
       "react-app",
