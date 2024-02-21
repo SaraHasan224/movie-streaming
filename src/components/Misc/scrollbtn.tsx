@@ -1,33 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-const ScrollUpBtn = () => {
+export const ScrollUpBtn = () => {
+  const [scrollUpButton, setScrollUpButton] = useState<boolean>(false);
 
-    const [scrollUpButton, setScrollUpButton] = useState<boolean>(false)
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        setScrollUpButton(true);
+      } else {
+        setScrollUpButton(false);
+      }
+    });
+  }, []);
 
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                setScrollUpButton(true)
-            } else {
-                setScrollUpButton(false)
-            }
-        })
-    }, [])
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-    const scrollUp = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
-
-    return (
-        <>
-            {scrollUpButton && (
-                <button className='scrollUpBtn' onClick={scrollUp}><i className="fa fa-angle-up"></i></button>
-            )}
-        </>
-    );
+  return (
+    <>
+      {scrollUpButton && (
+        <button className="scrollUpBtn" onClick={scrollUp}>
+          <i className="fa fa-angle-up"></i>
+        </button>
+      )}
+    </>
+  );
 };
-
-export default ScrollUpBtn;

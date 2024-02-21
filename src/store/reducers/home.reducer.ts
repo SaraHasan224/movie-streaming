@@ -13,7 +13,7 @@ const initialState: homeReducerTypes = {
   recommended: {},
 };
 
-const homeReducer = (state = initialState, action: actionProps) => {
+export const homeReducer = (state = initialState, action: actionProps) => {
   switch (action.type) {
     case HOME_CONSTANTS.HOMEPAGE.REQUEST:
       return state;
@@ -28,4 +28,3 @@ const homeReducer = (state = initialState, action: actionProps) => {
       return state;
   }
 };
-export default homeReducer;

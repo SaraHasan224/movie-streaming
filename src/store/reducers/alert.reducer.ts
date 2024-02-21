@@ -28,7 +28,7 @@ const initState: alertReducerTypes = {
   clearAll: false,
 };
 
-const alertReducer = (state = initState, action: actionProps) => {
+export const alertReducer = (state = initState, action: actionProps) => {
   switch (action.type) {
     case ALERT_CONSTANTS.SUCCESS:
       return {
@@ -69,5 +69,3 @@ const alertReducer = (state = initState, action: actionProps) => {
       return state;
   }
 };
-
-export default alertReducer;

@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "../../assets/images/logo/test-logo.png";
 
-type tProps = {};
+type HeaderProps = {};
 
-const Header: React.FC<tProps> = () => {
+export const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
       <div className="main-header app-header text-white">
@@ -32,5 +32,3 @@ const Header: React.FC<tProps> = () => {
     </header>
   );
 };
-
-export default Header;

@@ -1,10 +1,10 @@
-import { legacy_createStore as createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { persistStore } from "redux-persist";
 import { thunk } from "redux-thunk";
 import { createLogger } from "redux-logger";
 import promiseMiddleware from "redux-promise";
 
-import rootReducer from "./reducers/rootReducer";
+import { rootReducer } from "./reducers/rootReducer";
 
 const loggerMiddleware = createLogger();
 const check_app_environment = process.env.REACT_APP_ENVIRONMENT;

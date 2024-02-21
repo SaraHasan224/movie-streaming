@@ -1,8 +1,8 @@
 import React from "react";
 
-type tProps = {};
+type FooterCRProps = {};
 
-const FooterCopyRight: React.FC<tProps> = () => {
+export const FooterCopyRight: React.FC<FooterCRProps> = () => {
   return (
     <div className={`copyright-area`}>
       <div className="container">
@@ -13,5 +13,3 @@ const FooterCopyRight: React.FC<tProps> = () => {
     </div>
   );
 };
-
-export default FooterCopyRight;

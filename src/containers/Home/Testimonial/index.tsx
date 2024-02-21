@@ -1,9 +1,11 @@
 import React from "react";
-import Team1 from "../../../assets/images/testimonial/image.jpg";
+
 import { HomePageNews } from "../../../utils/json/movieData";
 
-type tProps = {};
-const Testomonial: React.FC<tProps> = () => {
+import Team1 from "../../../assets/images/testimonial/image.jpg";
+
+type TestimonialProps = {};
+export const Testomonial: React.FC<TestimonialProps> = () => {
   return (
     <div>
       <section className="testimonial-six pt-120 rpt-100 pb-90 rpb-70">
@@ -107,5 +109,3 @@ const Testomonial: React.FC<tProps> = () => {
     </div>
   );
 };
-
-export default Testomonial;

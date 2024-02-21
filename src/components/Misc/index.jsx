@@ -1,5 +1,3 @@
-import ScrollUpBtn from './scrollbtn'
+import { ScrollUpBtn } from "./scrollbtn";
 
-export {
-    ScrollUpBtn,
-}
+export { ScrollUpBtn };

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { CurrentlyPlaying, ComingSoon } from "../../../utils/json/movieData";
-import MoviePlaceholder from "./box";
+import { MoviePlaceholder } from "./box";
 import { CONSTANTS } from "../../../utils/index";
 
-type LState = any;
-type tProps = {
+type ListState = any;
+type MovieList = {
   listKey: string;
   title: string;
 };
@@ -18,9 +18,9 @@ type MovieProps = {
   delay: number;
 };
 
-const MovieList: React.FC<tProps> = (props) => {
+export const MovieList: React.FC<MovieList> = (props) => {
   const { listKey, title } = props;
-  const [list, setList] = useState<LState>([]);
+  const [list, setList] = useState<ListState>([]);
 
   useEffect(() => {
     if (listKey === CONSTANTS.MOVIE_LIST_TYPE.CURRENTLY_PLAYED) {
@@ -57,5 +57,3 @@ const MovieList: React.FC<tProps> = (props) => {
     </>
   );
 };
-
-export default MovieList;

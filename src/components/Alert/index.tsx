@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { HELPER } from "../../utils/index";
 import { ALERT_ACTIONS } from "../../store/actions/index";
 
-type tProps = {};
-type IRootState = {
+type AlertProps = {};
+type AlertState = {
   toast: {
     message: string;
     type: string;
   };
 };
 
-const AlertComponent: React.FC<tProps> = () => {
+export const AlertComponent: React.FC<AlertProps> = () => {
   let dispatch = useDispatch();
 
-  const { message, type } = useSelector((state: IRootState) => state.toast);
+  const { message, type } = useSelector((state: AlertState) => state.toast);
 
   const clearAlert = () => {
     dispatch(ALERT_ACTIONS.clear());
@@ -43,5 +43,3 @@ const AlertComponent: React.FC<tProps> = () => {
     </div>
   );
 };
-
-export default AlertComponent;

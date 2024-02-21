@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
-type tProps = {
+type ErrBProps = {
   children: any;
 };
 
-class ErrorBoundary extends Component<tProps, {}> {
-  constructor(props: tProps) {
+export class ErrorBoundary extends Component<ErrBProps, {}> {
+  constructor(props: ErrBProps) {
     super(props);
     this.state = { hasError: false };
   }
@@ -23,5 +23,3 @@ class ErrorBoundary extends Component<tProps, {}> {
     return this.props.children;
   }
 }
-
-export default React.memo(ErrorBoundary);
