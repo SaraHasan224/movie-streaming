@@ -16,7 +16,7 @@ import "./assets/css/animate.css";
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="movie-streaming">
       <React.StrictMode>
         <ErrorBoundary>
           <div>
